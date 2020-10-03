@@ -1,0 +1,32 @@
+/*FONTES*/
+
+@font-face {
+    font-family: 'American Captain';
+    src: url('../Fonts/AmericanCaptain.woff2') format('woff2'),
+        url('../Fonts/AmericanCaptain.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+/*ESTILIZAÇÃO BODY*/
+
+body{
+    background-color: #E7E3E3;
+}
+
+/*ESTILIZAÇÃO DO FORM*/
+
+.caixaCont{
+    background-color: #FFF;
+    border: 2px solid #000;
+    padding: 2em;
+    border-radius: 0.6em;
+    box-shadow: 3px 3px 3px black;
+}
+
+h1{
+    font-family: 'American Captain';
+    font-size: 5em;
+}
+

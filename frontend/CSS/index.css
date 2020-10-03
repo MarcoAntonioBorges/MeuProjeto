@@ -1,0 +1,43 @@
+html{
+    width: 100%;
+    height: 100%;
+}
+
+h1{
+    color: #FFF;
+}
+
+#backgroud{
+    background: url(../imagens/background.jpg);
+    position: relative;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    
+}
+
+.btn-cadastr{
+    font-size: 2em;
+    color: #FFF;
+    border-color: #FFF;
+    border-radius: 2em ;
+}
+
+.icone{
+    font-size: 8em;
+    color: #FFF;
+}
+
+.homePage{
+    text-align: center;
+    margin-top: 10em;
+}
+
+
+
+
+
+
+

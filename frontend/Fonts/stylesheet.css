@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'CollegiateFLF';
+    src: url('CollegiateFLF.woff2') format('woff2'),
+        url('CollegiateFLF.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+

@@ -1,0 +1,72 @@
+/*FONTES*/
+
+@font-face {
+    font-family: 'American Captain';
+    src: url('../Fonts/AmericanCaptain.woff2') format('woff2'),
+        url('../Fonts/AmericanCaptain.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+
+/*ESTILIZAÇÃO BODY*/
+
+
+body{
+    background-color: #D8D7D7;
+}
+
+/*ESTILIZAÇÃO DA CAIXA C/ CARDS*/
+
+.caixa{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+}
+
+
+/*ESTILIZAÇÃO DOS CARDS*/
+
+.card{
+    width: 350px;
+    height: 400px;
+    margin: 15px 15px;
+    border-radius: 1rem;
+    box-shadow: 0.4em 0.4em 0.4em black;
+    background-color: #FFF;
+}
+
+
+.card-title{
+    text-align: center;
+    font-size: 2.5em;
+    font-family: 'American Captain';   
+}
+
+.card-subtitle {
+    margin-top: 5px;
+    font-size: 12px;
+}
+
+.card-text .modal-body{
+    text-align: justify;
+    font-size: 0.8em;
+    margin-top: 50px;
+}
+
+.btn{
+    width: 100%;
+    margin-top: 50px;
+}
+
+.btn-actions{
+    border-radius: 60px;
+}
+
+.preco{
+    margin-top: 5px;
+    display: flex;
+    justify-content: flex-end;
+}
