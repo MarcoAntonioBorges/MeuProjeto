@@ -19,20 +19,22 @@ body{
 
 /*ESTILIZAÇÃO DA CAIXA C/ CARDS*/
 
-.caixa{
+/* .caixa{
     display: flex;
     flex-direction: row;
     flex-wrap: nowrap;
     justify-content: space-around;
-}
+}  */
 
 
 /*ESTILIZAÇÃO DOS CARDS*/
 
+
+
 .card{
-    width: 350px;
-    height: 400px;
-    margin: 15px 15px;
+    width: 100%;
+    height: 100%;
+    margin: 35px;
     border-radius: 1rem;
     box-shadow: 0.4em 0.4em 0.4em black;
     background-color: #FFF;
@@ -50,10 +52,14 @@ body{
     font-size: 12px;
 }
 
-.card-text .modal-body{
+.card-text{
     text-align: justify;
     font-size: 0.8em;
     margin-top: 50px;
+}
+
+.modal-body{
+    text-align: justify;
 }
 
 .btn{

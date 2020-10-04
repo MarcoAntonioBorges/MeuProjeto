@@ -14,7 +14,7 @@
 
     <nav class="navbar navbar-expand-sm navbar-dark" style="background-color: #333;">
       <a class="navbar-brand" href="index.html">Meu Produto</a>
-      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"></button>
+      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#collapsibleNavId" aria-controls="collapsibleNavId" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
       <div class="collapse navbar-collapse" id="collapsibleNavId">
           <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
               <li class="nav-item active">
@@ -34,18 +34,16 @@
       
 
     <div class="container">
-      <div class="caixa">
+      <div class="row">
 
         <!-- CARD 01 INICIO -->
 
-        <div class="card">
+        <div class="card col-md-3">
           <div class="card-body">
-            <h4 class="card-title">Produto</h4>
+            <h4 class="card-title">Playstation 5</h4>
             <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula a nisi vitae tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sed nisl sem. Fusce ultricies lacus gravida eleifend molestie. </p>
-          </div>
-          
-          <div class="card-body">
-            <h6 class="card-subtitle text-muted" style="font-size: 12px;">Validade em 20/10/2020</h6>
+
+            
            
             <button type="button" class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">Ver mais <i class="fa fa-plus-circle" aria-hidden="true"></i>
             </button>
@@ -55,14 +53,15 @@
               <div class="modal-dialog modal-lg">
                 <div class="modal-content">
                   <div class="modal-header">
-                    <h5 class="modal-title" id="TituloModalCentralizado">Produto
-                      <div>
-                        <h6 class="card-subtitle text-muted">Validade em 20/10/2020</h6>
-                      </div>
-                    </h5>
+                    
+                    <div>
+                      <h5 class="modal-title" id="TituloModalCentralizado">Playstation 5</h5>
+                      <h6 class="modal-subtitle text-muted">Validade em 20/10/2020</h6>
+                    </div>
+                    
                     
                       <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">&times;</span>
+                        <span aria-hidden="true">x</span>
                       </button> 
                     </div>
                     <div class="modal-body">
@@ -72,17 +71,24 @@
 
                     </div>
                     <div class="modal-footer">
-                      <button type="button" class="btn btn-warning text-white col-2 btn-actions" data-dismiss="modal">Editar <i class="fa fa-pencil" aria-hidden="true"></i></button>
-                      <button type="button" class="btn btn-danger col-2 btn-actions">Deletar <i class="fa fa-trash" aria-hidden="true"></i>
+                      <button type="button" class="btn btn-warning text-white col-sm-2 btn-actions" data-dismiss="modal">Editar <i class="fa fa-pencil" aria-hidden="true"></i></button>
+                      <button type="button" class="btn btn-danger col-sm-2 btn-actions">Deletar <i class="fa fa-trash" aria-hidden="true"></i>
                       </button>
                     </div>
                 </div>
               </div>
             </div>
             <!-- CARD 01 MODAL FIM -->
+          
+          
           </div>
         </div>
         <!-- CARD 01 FIM -->
+
+
+
+        
+
       </div>   
     </div>
 
