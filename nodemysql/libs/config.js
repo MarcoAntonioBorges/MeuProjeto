@@ -1,10 +1,10 @@
 module.exports = {
-    database: "PROJETO_MEU_PRODUTO",
-    username: "root",
-    password: 'password',
+    database: process.env.DATABASE,
+    username: process.env.USERNAME,
+    password: process.env.PASSWORD,
     params: {
-        dialect: "mysql",
-        host: 'localhost',
-        port: 3306
+        dialect: process.env.DIALECT,
+        host: process.env.HOST,
+        port: process.env.DB_PORT
     }
 };

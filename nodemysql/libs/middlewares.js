@@ -17,7 +17,7 @@ module.exports = app => {
         //Quais são os métodos que a conexão pode realizar na API
         res.header("Access-Control-Allow-Methods", 'GET,PUT,POST,DELETE');
         app.use(cors());
-        
+
         // Middleware de pré-execução das rotas
         delete req.body.id;
         next();
