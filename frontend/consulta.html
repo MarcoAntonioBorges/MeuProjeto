@@ -36,63 +36,7 @@
 
 
     <div class="container">
-        <div class="row" id="cardInit">
-
-            <!-- CARD 01 INICIO -->
-
-            <div class="card col-md-3">
-                <div class="card-body">
-                    <h4 class="card-title">Playstation 5</h4>
-                    <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula a nisi vitae tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sed nisl sem. Fusce ultricies lacus gravida eleifend molestie.
-                    </p>
-
-
-
-                    <button type="button" class="btn btn-dark" data-toggle="modal" data-target=".bd-example-modal-lg">Ver mais <i class="fa fa-plus-circle" aria-hidden="true"></i>
-            </button>
-
-                    <!-- CARD 01 MODAL INICIO -->
-                    <div class="modal fade bd-example-modal-lg" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-                        <div class="modal-dialog modal-lg">
-                            <div class="modal-content">
-                                <div class="modal-header">
-
-                                    <div>
-                                        <h5 class="modal-title" id="TituloModalCentralizado">Playstation 5</h5>
-                                        <h6 class="modal-subtitle text-muted">Validade em 20/10/2020</h6>
-                                    </div>
-
-
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
-                        <span aria-hidden="true">x</span>
-                      </button>
-                                </div>
-                                <div class="modal-body">
-                                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque vehicula a nisi vitae tincidunt. Interdum et malesuada fames ac ante ipsum primis in faucibus. Quisque sed nisl sem. Fusce ultricies lacus gravida eleifend molestie.
-
-                                    <h5 class="preco">R$ 100,00</h5>
-
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-warning text-white col-sm-2 btn-actions" data-dismiss="modal">Editar <i class="fa fa-pencil" aria-hidden="true"></i></button>
-                                    <button type="button" class="btn btn-danger col-sm-2 btn-actions">Deletar <i class="fa fa-trash" aria-hidden="true"></i>
-                      </button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- CARD 01 MODAL FIM -->
-
-
-                </div>
-            </div>
-            <!-- CARD 01 FIM -->
-
-
-
-
-
-        </div>
+        <div class="row" id="cardInit"></div>
     </div>
 
 
@@ -128,11 +72,11 @@
                         cardBody.classList.add("card-body");
 
                         var cardTitle = document.createElement("h4");
-                        cardTitle.classList.add("card-title", "h-25");
+                        cardTitle.classList.add("card-title");
                         cardTitle.textContent = produto.nm_produto;
 
                         var cardText = document.createElement("p");
-                        cardText.classList.add("card-text", "h-25");
+                        cardText.classList.add("card-text");
                         cardText.textContent = produto.ds_produto;
 
                         // var cardSubtitle = document.createElement("h6");
@@ -205,7 +149,7 @@
                         modalFooter.classList.add("modal-footer");
 
                         var btnEdit = document.createElement("button");
-                        btnEdit.classList.add("btn", "btn-warning", "text-white", "col-2", "btn-actions");
+                        btnEdit.classList.add("btn", "btn-warning", "text-white", "btn-actions", "col-sm-2");
                         btnEdit.setAttribute("type", "button");
                         btnEdit.textContent = "Editar ";
 
@@ -214,7 +158,7 @@
                         iconPencil.setAttribute("aria-hidden", "true");
 
                         var btnDelete = document.createElement("button");
-                        btnDelete.classList.add("btn", "btn-danger", "col-2", "btn-actions");
+                        btnDelete.classList.add("btn", "btn-danger", "col-sm-2", "btn-actions");
                         btnDelete.setAttribute("type", "button");
                         btnDelete.textContent = "Deletar ";
 
