@@ -14,7 +14,13 @@
 
 
 body{
-    background-color: #D8D7D7;
+    background: url(../imagens/background1.jpg);
+    position: relative;
+    height: 100%;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 /*ESTILIZAÇÃO DA CAIXA C/ CARDS*/
@@ -33,18 +39,22 @@ body{
 
 .card{
     width: 100%;
-    height: 100%;
+    height: 50vh;
     margin: 35px;
     border-radius: 1rem;
     box-shadow: 0.4em 0.4em 0.4em black;
     background-color: #FFF;
+    max-width: 300px;
 }
 
 
 .card-title{
     text-align: center;
     font-size: 2.5em;
-    font-family: 'American Captain';   
+    font-family: 'American Captain';
+    max-height: 45%;
+    overflow: hidden;
+    height: 100px;
 }
 
 .card-subtitle {
@@ -55,7 +65,9 @@ body{
 .card-text{
     text-align: justify;
     font-size: 0.8em;
-    margin-top: 50px;
+    max-height: 45%;
+    overflow: hidden;
+    height: 120px;
 }
 
 .modal-body{
@@ -64,7 +76,6 @@ body{
 
 .btn{
     width: 100%;
-    margin-top: 50px;
 }
 
 .btn-actions{
