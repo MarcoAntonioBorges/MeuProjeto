@@ -1,9 +1,9 @@
 # Arquivo de configuracao da aplicacao backend, após configurar renomeie o arquivo para .env
 APP_PORT=
 APP_DEBUG=
-DATABASE=
-USERNAME=
-PASSWORD=
-DIALECT=
-HOST=
-DB_PORT=
+DATABASE_STORAGE=
+DATABASE_USERNAME=
+DATABASE_PASSWORD=
+DATABASE_DIALECT=
+DATABASE_HOST=
+DATABASE_PORT=
