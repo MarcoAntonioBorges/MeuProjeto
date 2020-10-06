@@ -30,13 +30,25 @@ btnSubmit.addEventListener("click", function(event) {
     };
     axios.post(ENDPOINT_URL, produto, API_HEADERS)
         .then((response) => {
-            alert(JSON.stringify(response));
+            Swal.fire({
+                title: "Produto cadastrado!", 
+                icon: "success"
+            }).then(function(){
+             var teste = window.location.href.replace("form.html", "consulta.html"); 
+             window.location.href = teste;   
+            });
+            
         })
-        .catch((error) => {
-            console.error(error);
+        .catch((error) => {''
+        Swal.fire({
+            icon: 'error',
+            title: 'Ops...',
+            text: 'Falha ao cadastrar o produto.',
+          })
         });
 
     form.reset();
     form.nome.focus();
 
 });
+

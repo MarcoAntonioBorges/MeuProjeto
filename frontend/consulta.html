@@ -44,8 +44,8 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
     <!-- Optional JavaScript -->
     <script>
         window.load = function() {
@@ -153,6 +153,10 @@
                         btnEdit.setAttribute("type", "button");
                         btnEdit.textContent = "Editar ";
 
+                        btnEdit.addEventListener("click", function() {
+                            editarProduto(produto);
+                        });
+
                         var iconPencil = document.createElement("i");
                         iconPencil.classList.add("fa", "fa-pencil");
                         iconPencil.setAttribute("aria-hidden", "true");
@@ -161,6 +165,10 @@
                         btnDelete.classList.add("btn", "btn-danger", "col-sm-2", "btn-actions");
                         btnDelete.setAttribute("type", "button");
                         btnDelete.textContent = "Deletar ";
+
+                        btnDelete.addEventListener("click", function(event){
+                            deletarProduto(produto.cd_produto, produto.nm_produto);
+                        });
 
                         var iconTrash = document.createElement("i");
                         iconTrash.classList.add("fa", "fa-trash");
@@ -216,13 +224,60 @@
                         cardInit.appendChild(card);
                     });
 
+
                 }).catch(error => {
                     console.error('Erro na requisicao da solicitacao', error);
                 });
 
+                function deletarProduto(id, nome){
+
+                    Swal.fire({
+                        title: `Deseja remover o produto ${nome}`,
+                        text: "Esse produto será deletado permanetemente!",
+                        icon: 'warning',
+                        showCancelButton: true,
+                        confirmButtonColor: '#3085d6',
+                        cancelButtonColor: '#d33',
+                        confirmButtonText: 'Sim, quero deletar',
+                        cancelButtonText: 'Cancelar'
+                    }).then(function(confirm) {
+                        console.log(confirm);
+                        if (confirm.isConfirmed){
+                            Swal.fire({
+                                title: 'Deletado',
+                                text: 'Produto deletado com sucesso.',
+                                icon: 'success'
+                            }).then(function(){
+                                axios.delete(ENDPOINT_URL + "/" + id)
+                                 .then(res =>{
+                                     console.log(res);
+                                     document.location.reload(true);
+                                 })
+                                 .catch(error =>{
+                                     console.error("Erro na requisição da solicitação.", error);
+                                  });        
+                            });
+                                
+                        }else{
+                            Swal.fire(
+                                'Cancelado',
+                                'Produto não deletado.',
+                                'error'
+                            );                
+                    } 
+                        
+                    });
+                }
+
+                 function editarProduto(produto) {
+                    myStorage = window.localStorage;
+                    myStorage.setItem("produto", JSON.stringify(produto));
+                    window.location.href = window.location.href.replace("consulta.html", "formEdit.html");
+                 }
 
         }();
     </script>
+    
 
 
 </body>
