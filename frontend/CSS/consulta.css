@@ -63,7 +63,6 @@ body{
 }
 
 .card-text{
-    text-align: justify;
     font-size: 0.8em;
     max-height: 45%;
     overflow: hidden;
