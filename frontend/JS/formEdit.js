@@ -17,9 +17,16 @@ if(produto != null) {
     var form = document.getElementById("form");
     var btnSubmit = document.getElementById("btnSubmit");
     
+    var data = produto.dt_fabricacao;
+    var ano = data.substring(data.indexOf(""), data.indexOf("-"));
+    var mes = data.substring(data.indexOf("-")+1, data.lastIndexOf("-"));
+    var dia = data.substring(data.lastIndexOf("-")+1, data.lastIndexOf("-")+3);
+    var dataFormatada = `${ano}-${mes}-${dia}`;
+    
+    
     form.nome.value = produto.nm_produto;
     form.preco.value = produto.vl_produto;
-    form.dataFabr.value = (produto.dt_fabricacao).replace("/", "-");
+    form.dataFabr.value = dataFormatada;
     form.descricao.value = produto.ds_produto;
 
     btnSubmit.addEventListener('click', function(evt) {
