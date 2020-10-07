@@ -1,3 +1,9 @@
+if (window.innerWidth < 500) {
+    document.getElementById("titleForm").style.fontSize = "2em";
+} else {
+    document.getElementById("titleForm").style.fontSize = "5em";
+}
+
 myStorage = window.localStorage;
 var produto = JSON.parse(myStorage.getItem("produto"));
 const ENDPOINT_URL = "http://127.0.0.1:3000/produtos";
@@ -13,7 +19,7 @@ if(produto != null) {
     
     form.nome.value = produto.nm_produto;
     form.preco.value = produto.vl_produto;
-    form.dataFabr.value = produto.dt_fabricacao;
+    form.dataFabr.value = (produto.dt_fabricacao).replace("/", "-");
     form.descricao.value = produto.ds_produto;
 
     btnSubmit.addEventListener('click', function(evt) {

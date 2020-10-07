@@ -125,7 +125,13 @@
                         var modalSubtitle = document.createElement("h6");
                         modalSubtitle.classList.add("modal-subtitle", "text-muted");
                         modalSubtitle.style.fontSize = "12px";
-                        modalSubtitle.textContent = `Fabricado em ${produto.dt_fabricacao}`;
+
+                        var data = produto.dt_fabricacao;
+                        var ano = data.substring(data.indexOf(""), data.indexOf("-"));
+                        var mes = data.substring(data.indexOf("-")+1, data.lastIndexOf("-"));
+                        var dia = data.substring(data.lastIndexOf("-")+1, data.lastIndexOf("-")+3);
+                        var dataFormatada = `${dia}/${mes}/${ano}`;
+                        modalSubtitle.textContent = `Fabricado em ${dataFormatada}`;
 
                         var btnClose = document.createElement("button");
                         btnClose.classList.add("close");
