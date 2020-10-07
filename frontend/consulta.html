@@ -64,7 +64,7 @@
                     console.log(response);
                     console.log(response.data);
 
-                    response.data.forEach(produto => {
+                    response.data.reverse().forEach(produto => {
                         var card = document.createElement("div");
                         card.classList.add("card", "col-md-3");
 
@@ -128,8 +128,8 @@
 
                         var data = produto.dt_fabricacao;
                         var ano = data.substring(data.indexOf(""), data.indexOf("-"));
-                        var mes = data.substring(data.indexOf("-")+1, data.lastIndexOf("-"));
-                        var dia = data.substring(data.lastIndexOf("-")+1, data.lastIndexOf("-")+3);
+                        var mes = data.substring(data.indexOf("-") + 1, data.lastIndexOf("-"));
+                        var dia = data.substring(data.lastIndexOf("-") + 1, data.lastIndexOf("-") + 3);
                         var dataFormatada = `${dia}/${mes}/${ano}`;
                         modalSubtitle.textContent = `Fabricado em ${dataFormatada}`;
 
@@ -149,7 +149,7 @@
 
                         var textPreco = document.createElement("h5");
                         textPreco.classList.add("preco");
-                        textPreco.textContent = `R$ ${(produto.vl_produto).toFixed(2).replace(".",",")}`;
+                        textPreco.textContent = `${(produto.vl_produto).toLocaleString('pt-BR', { style: 'currency', currency: 'BRL' })}`;
 
                         var modalFooter = document.createElement("div");
                         modalFooter.classList.add("modal-footer");
@@ -172,7 +172,7 @@
                         btnDelete.setAttribute("type", "button");
                         btnDelete.textContent = "Deletar ";
 
-                        btnDelete.addEventListener("click", function(event){
+                        btnDelete.addEventListener("click", function(event) {
                             deletarProduto(produto.cd_produto, produto.nm_produto);
                         });
 
@@ -235,55 +235,55 @@
                     console.error('Erro na requisicao da solicitacao', error);
                 });
 
-                function deletarProduto(id, nome){
+            function deletarProduto(id, nome) {
 
-                    Swal.fire({
-                        title: `Deseja remover o produto ${nome}`,
-                        text: "Esse produto será deletado permanetemente!",
-                        icon: 'warning',
-                        showCancelButton: true,
-                        confirmButtonColor: '#3085d6',
-                        cancelButtonColor: '#d33',
-                        confirmButtonText: 'Sim, quero deletar',
-                        cancelButtonText: 'Cancelar'
-                    }).then(function(confirm) {
-                        console.log(confirm);
-                        if (confirm.isConfirmed){
-                            Swal.fire({
-                                title: 'Deletado',
-                                text: 'Produto deletado com sucesso.',
-                                icon: 'success'
-                            }).then(function(){
-                                axios.delete(ENDPOINT_URL + "/" + id)
-                                 .then(res =>{
-                                     console.log(res);
-                                     document.location.reload(true);
-                                 })
-                                 .catch(error =>{
-                                     console.error("Erro na requisição da solicitação.", error);
-                                  });        
-                            });
-                                
-                        }else{
-                            Swal.fire(
-                                'Cancelado',
-                                'Produto não deletado.',
-                                'error'
-                            );                
-                    } 
-                        
-                    });
-                }
+                Swal.fire({
+                    title: `Deseja remover o produto ${nome}`,
+                    text: "Esse produto será deletado permanetemente!",
+                    icon: 'warning',
+                    showCancelButton: true,
+                    confirmButtonColor: '#3085d6',
+                    cancelButtonColor: '#d33',
+                    confirmButtonText: 'Sim, quero deletar',
+                    cancelButtonText: 'Cancelar'
+                }).then(function(confirm) {
+                    console.log(confirm);
+                    if (confirm.isConfirmed) {
+                        Swal.fire({
+                            title: 'Deletado',
+                            text: 'Produto deletado com sucesso.',
+                            icon: 'success'
+                        }).then(function() {
+                            axios.delete(ENDPOINT_URL + "/" + id)
+                                .then(res => {
+                                    console.log(res);
+                                    document.location.reload(true);
+                                })
+                                .catch(error => {
+                                    console.error("Erro na requisição da solicitação.", error);
+                                });
+                        });
 
-                 function editarProduto(produto) {
-                    myStorage = window.localStorage;
-                    myStorage.setItem("produto", JSON.stringify(produto));
-                    window.location.href = window.location.href.replace("consulta.html", "formEdit.html");
-                 }
+                    } else {
+                        Swal.fire(
+                            'Cancelado',
+                            'Produto não deletado.',
+                            'error'
+                        );
+                    }
+
+                });
+            }
+
+            function editarProduto(produto) {
+                myStorage = window.localStorage;
+                myStorage.setItem("produto", JSON.stringify(produto));
+                window.location.href = window.location.href.replace("consulta.html", "formEdit.html");
+            }
 
         }();
     </script>
-    
+
 
 
 </body>
